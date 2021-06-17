@@ -40,5 +40,5 @@ Point your web browser to http://localhost:8080/
 
 ## Authors and contributors:
 
-**Initial work**: [Louay Nahdi](https://github.com/louay321) - **Author**
-**Contribution**: [Marouane Skandaji](https://github.com/marouenes) - **Contributor**
+- **Initial work**: [Louay Nahdi](https://github.com/louay321) - **Author**
+- **Contribution**: [Marouane Skandaji](https://github.com/marouenes) - **Contributor**
