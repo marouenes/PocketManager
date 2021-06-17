@@ -1,24 +1,33 @@
-"""This is a university related project that uses python GUI
- and other modules, created by Nahdi Louay.
- uses file manipulation, JSON for data storage,
- PySimpleGUI and YAML for config retrieval.
- """
+"""
+     This is a university related project that uses python GUI
+     and other modules, created by Nahdi Louay.
+     uses file manipulation, JSON for data storage,
+     PySimpleGUI and YAML for config retrieval.
 
+"""
+
+# -*- coding: UTF-8 -*-
 
 from datetime import date
 import json
 import PySimpleGUI as sg
 import yaml
-
+from flask import Flask, request
 import matplotlib
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-
 from budget import budget
 
-#      Testing the budget class objects
+## Testing the budget class objects
+
 # test_budget = budget(date.today().strftime("%m/%d/%y"), 2000)
 # print(test_budget.view_budget())
 
+app = Flask(__name__)
+
+app.config["DEBUG"] = True
+app.config["SECRET_KEY"] = "123454515321314846"
+
+@app.route('/home', methods=["GET", "POST"])
 def draw_figure(canvas, figure):
     figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
     figure_canvas_agg.draw()
@@ -39,7 +48,7 @@ def writeToJson(path, fileName, data):
     with open(fullPathWname, 'w') as file:
         json.dump(data, file, indent=4)
 
-
+@app.route('/')
 def main():
     print("project building..")
 
@@ -130,4 +139,5 @@ def main():
 
 
 if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
     main()
