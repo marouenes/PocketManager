@@ -38,10 +38,7 @@ Point your web browser to http://localhost:8080/
     # Start the Flask development web server
     py.test tests/
 
-## Libraries used :
-    - DateTime : pip install DateTime
-    - Json : built-in
-    - PySimpleGUI : pip install PySimpleGUI
-    - YAML : built-in
-    - matplotlib : pip install matplotlib
+## Authors and contributors:
 
+**Initial work**: [Louay Nahdi](https://github.com/louay321) - **Author**
+**Contribution**: [Marouane Skandaji](https://github.com/marouenes) - **Contributor**
